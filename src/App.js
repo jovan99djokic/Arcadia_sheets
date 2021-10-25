@@ -14,7 +14,7 @@ import {
 export default function App() {
   return (
     <Router>
-      <div>
+      <div className="App">
             <Link to="/Division1">
            <img src={Div1} className="Icon" alt="Icon" />
             </Link>
@@ -34,7 +34,7 @@ export default function App() {
 
 function division1() {
   return (
-    <div>
+    <div className="App">
       <Division1></Division1>
     </div>
   );
@@ -43,7 +43,7 @@ function division1() {
 
 function division2() {
   return (
-    <div>
+    <div className="App">
       <Division2></Division2>
     </div>
   );

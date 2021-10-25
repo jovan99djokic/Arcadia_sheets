@@ -1,5 +1,5 @@
 .App {
-  /* text-align: center; */
+  background-color: #282c34;
 }
 
 .App-logo {
@@ -41,6 +41,12 @@
   background-color: #282c34;
   border: 3px solid #ddd;
   border-radius: 25px;
-  padding: 10px 50px;
+  padding: 0px 50px;
   width: 130px;
+}
+
+.Table{
+
+  background-color: #282c34;
+
 }

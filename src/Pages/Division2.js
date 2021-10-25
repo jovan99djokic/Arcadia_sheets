@@ -8,7 +8,7 @@ function Division2() {
   const [data, setData] = useState([])
   const columns = [
     { title: "Name", field: "name" },
-    { title: "Division", field: "secondaryGroups.0.name" },
+    { title: "Division", field: "secondaryGroups.0.name",defaultFilter: "Division 2" },
     { title: "Time Zone", field: "timeZone" },
     { title: "Reputation Points", field: "reputationPoints" },
     { title: "Posts", field: "posts" },
@@ -31,7 +31,21 @@ function Division2() {
         title="Division 2"
         data={data.results}
         columns={columns}
+        options={{
+          toolbar:false ,
+          headerStyle: {
+            backgroundColor: "#CC0000",
+            color: 'white'
+        },
+          paging:false,
+          search: false,
+          pageSize:50,      
+          emptyRowsWhenPaging: false,  
+        }}
       
+        style={{ backgroundColor: '#282c34',
+        color: 'white'
+      }}
       />
     </div>
   );

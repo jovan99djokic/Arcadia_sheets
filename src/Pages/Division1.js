@@ -8,7 +8,7 @@ function Division1() {
   const [data, setData] = useState([])
   const columns = [
     { title: "Name", field: "name" },
-    { title: "Division", field: "secondaryGroups.0.name" },
+    { title: "Division", field: "secondaryGroups.0.name",defaultFilter: "Division 1" },
     { title: "Time Zone", field: "timeZone" },
     { title: "Reputation Points", field: "reputationPoints" },
     { title: "Posts", field: "posts" },
@@ -31,7 +31,21 @@ function Division1() {
         title="Division 1"
         data={data.results}
         columns={columns}
+        options={{
+          toolbar:false ,
+          headerStyle: {
+            backgroundColor: "#CC0000",
+            color: 'white'
+        },
+          paging:false,
+          search: false,
+          pageSize:50,       // make initial page size
+          emptyRowsWhenPaging: false,   // To avoid of having empty rows
+        }}
       
+        style={{ backgroundColor: '#282c34',
+        color: 'white'
+      }}
       />
     </div>
   );
