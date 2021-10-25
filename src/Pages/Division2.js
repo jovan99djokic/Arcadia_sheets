@@ -10,6 +10,7 @@ function Division2() {
     { title: "Name", field: "name" },
     { title: "Division", field: "secondaryGroups.0.name",defaultFilter: "Division 2" },
     { title: "Time Zone", field: "timeZone" },
+    { title: "Primary Group", field: "primaryGroup.name"},
     { title: "Reputation Points", field: "reputationPoints" },
     { title: "Posts", field: "posts" },
     { title: "Last Visit", field: "lastVisit" },
