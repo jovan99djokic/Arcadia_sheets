@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/Arcadia_sheets/precache-manifest.ffaff52b4a6afe695cd96d9bcf4f08fc.js"
+  "/Arcadia_sheets/precache-manifest.00c8252d4f3a94ca9b7f1d84d539b661.js"
 );
 
 self.addEventListener('message', (event) => {
