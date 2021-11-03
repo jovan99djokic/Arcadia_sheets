@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import '../App.css'
+import './App.css'
 import MaterialTable from 'material-table'
 
 
@@ -18,7 +18,7 @@ function Division2() {
     { title: "Achievement Points", field: "achievements_points" },
   ]
   useEffect(() => {
-    fetch("/api/core/members?key=d89ae9a6e3ace7714983ed652997357b")
+    fetch('https://murmuring-sierra-05569.herokuapp.com/https://jsonplaceholder.typicode.com/users')
       .then(resp => resp.json())
       .then(resp => {
         console.log(resp);

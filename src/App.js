@@ -2,10 +2,10 @@ import React from "react";
 import './App.css';
 import Div1 from './Div1.png';
 import Div2 from './Div2.png';
-import Division1 from './Pages/Division1.js'
-import Division2 from './Pages/Division2.js'
+import Division1 from './Division1.js'
+import Division2 from './Division2.js'
 import {
-  BrowserRouter as Router,
+  HashRouter,
   Switch,
   Route,
   Link
@@ -13,7 +13,7 @@ import {
 
 export default function App() {
   return (
-    <Router>
+    <HashRouter>
       <div className="App">
             <Link to="/Division1">
            <img src={Div1} className="Icon" alt="Icon" />
@@ -28,7 +28,7 @@ export default function App() {
           <Route path="/Division2" component={division2}></Route>
         </Switch>
       </div>
-    </Router>
+    </HashRouter>
   );
 }
 
