@@ -1,36 +1,28 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './App.css'
 import MaterialTable from 'material-table'
 
 
-function Division1() {
-
-  const [data, setData] = useState([])
+function Division1 (props) {
   const columns = [
-    { title: "Name", field: "name" },
-    { title: "Division", field: "secondaryGroups.0.name",defaultFilter: "Division 1" },
-    { title: "Time Zone", field: "timeZone" },
-    { title: "Primary Group", field: "primaryGroup.name"},
-    { title: "Reputation Points", field: "reputationPoints" },
-    { title: "Posts", field: "posts" },
-    { title: "Last Visit", field: "lastVisit" },
-    { title: "Rank", field: "rank" },
-    { title: "Achievement Points", field: "achievements_points" },
-  ]
-  useEffect(() => {
-    fetch('https://murmuring-sierra-05569.herokuapp.com/https://www.arcadiagaming.net/api/core/members?key=d89ae9a6e3ace7714983ed652997357b')
-      .then(resp => resp.json())
-      .then(resp => {
-        console.log(resp);
-        setData(resp)
-      })
-  }, [])
+    { title: "Name", field: "name"},
+    // { title: "Division", field: "secondaryGroups.0.name",defaultFilter: "Division 1" },
+    //{ title: "Time Zone", field: "1.results.timeZone" },
+    // { title: "Reputation Points", field: "reputationPoints" },
+    // { title: "Posts", field: "posts" },
+    // { title: "Last Visit", field: "lastVisit" },
+    // { title: "Rank", field: "rank" },
+    // { title: "Achievement Points", field: "achievements_points" },
+  ];
 
+  
+ 
+console.log("Division1", props);
   return (
     <div className="App">
       <MaterialTable
         title="Division 1"
-        data={data.results}
+        data={props.data.results}
         columns={columns}
         options={{
           toolbar:false ,
@@ -43,7 +35,6 @@ function Division1() {
           pageSize:50,       // make initial page size
           emptyRowsWhenPaging: false,   // To avoid of having empty rows
         }}
-      
         style={{ backgroundColor: '#282c34',
         color: 'white'
       }}
