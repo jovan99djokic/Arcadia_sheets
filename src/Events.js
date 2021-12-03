@@ -7,7 +7,7 @@ import Division1 from './Division1.js'
     var konacni = [];
 
     useEffect(() => {
-    fetch('/api/calendar/events?key=d89ae9a6e3ace7714983ed652997357b')
+    fetch('https://cors-anywhere.herokuapp.com/https://www.blacksabre.org/api/calendar/events?key=d89ae9a6e3ace7714983ed652997357b')
       .then(resp => resp.json())
       .then(resp => {
         setDataq(resp.results)
@@ -15,39 +15,34 @@ import Division1 from './Division1.js'
     }, [])   
 
       useEffect(() => {
-        fetch('/api/core/members?key=d89ae9a6e3ace7714983ed652997357b')
+        fetch('https://cors-anywhere.herokuapp.com/https://www.blacksabre.org/api/core/members?key=d89ae9a6e3ace7714983ed652997357b')
           .then(resp => resp.json())
           .then(resp => {
             setDatas(resp.results)   
           })
       }, [])     
 
+      // let result = datas.map(a => a.id);
 
-      let result = datas.map(a => a.id);
       let resulq = dataq.map(b => b.author.id);
-      console.log("datas", result);
-      console.log("dataq", resulq);
-      for(var j=0; j<result.length; j++){
+      let max_vrednost = resulq.slice(-1)[0] 
+
+      for(let j=0; j<max_vrednost+1; j++){
         let k = 0;
-      for(var i=0; i<result.length; i++){
+      for(let i=0; i<max_vrednost+1; i++){
         
         if(resulq[i] === j)
           {
             k++;
           }
-         
       }
-      console.log("Broj je:", k);
       konacni.push(k);
     }
-    console.log("konacni", konacni);
-       var merged = {dataq, datas};
-       
-
-       
+    // console.log("konacni", konacni);
+    let dodat = datas.map(obj=> ({...obj, konacni: konacni[obj.id]}))
+    // console.log("Dodat", dodat);
 return(
-  <Division1 data={merged}/>
+  <Division1 data={dodat}/>
 );
 } 
-
 export default Event;

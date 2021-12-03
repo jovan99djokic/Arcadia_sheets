@@ -5,14 +5,16 @@ import MaterialTable from 'material-table'
 
 function Division1 (props) {
   const columns = [
+    { title: "Id", field: "id"},
     { title: "Name", field: "name"},
-    // { title: "Division", field: "secondaryGroups.0.name",defaultFilter: "Division 1" },
-    //{ title: "Time Zone", field: "1.results.timeZone" },
-    // { title: "Reputation Points", field: "reputationPoints" },
-    // { title: "Posts", field: "posts" },
-    // { title: "Last Visit", field: "lastVisit" },
-    // { title: "Rank", field: "rank" },
-    // { title: "Achievement Points", field: "achievements_points" },
+    { title: "Division", field: "secondaryGroups.0.name",defaultFilter: "Division 1" },
+    { title: "Time Zone", field: "1.results.timeZone" },
+    { title: "Reputation Points", field: "reputationPoints" },
+    { title: "Posts", field: "posts" },
+    { title: "Last Visit", field: "lastVisit" },
+    { title: "Rank", field: "rank" },
+    { title: "Achievement Points", field: "achievements_points" },
+    { title: "Events Hosted", field: "konacni" },
   ];
 
   
@@ -22,7 +24,7 @@ console.log("Division1", props);
     <div className="App">
       <MaterialTable
         title="Division 1"
-        data={props.data.results}
+        data={props.data}
         columns={columns}
         options={{
           toolbar:false ,

@@ -1,6 +1,5 @@
 {
   "name": "react-pages",
-  "proxy": "https://www.blacksabre.org",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

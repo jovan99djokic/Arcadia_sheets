@@ -6,9 +6,9 @@ import Events from './Events'
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
-  // <React.StrictMode>
-    <Events/>,
-  // </React.StrictMode>, Zapamti zared da obrises red iznad
+   <React.StrictMode>
+    <Events/>
+   </React.StrictMode>,
   document.getElementById('root')
 );
 
