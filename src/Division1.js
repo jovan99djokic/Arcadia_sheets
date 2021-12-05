@@ -16,9 +16,7 @@ function Division1 (props) {
     { title: "Achievement Points", field: "achievements_points" },
     { title: "Events Hosted", field: "konacni" },
   ];
-
   
- 
 console.log("Division1", props);
   return (
     <div className="App">

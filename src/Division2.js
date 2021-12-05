@@ -18,7 +18,7 @@ function Division2() {
     { title: "Achievement Points", field: "achievements_points" },
   ]
   useEffect(() => {
-    fetch('https://murmuring-sierra-05569.herokuapp.com/https://www.blacksabre.org/api/core/members?key=d89ae9a6e3ace7714983ed652997357b')
+    fetch('/api/core/members?key=d89ae9a6e3ace7714983ed652997357b')
       .then(resp => resp.json())
       .then(resp => {
         console.log(resp);
