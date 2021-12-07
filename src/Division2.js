@@ -1,36 +1,28 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './App.css'
 import MaterialTable from 'material-table'
 
 
-function Division2() {
-
-  const [data, setData] = useState([])
+function Division2 (props) {
   const columns = [
-    { title: "Name", field: "name" },
+    { title: "Id", field: "id"},
+    { title: "Name", field: "name"},
     { title: "Division", field: "secondaryGroups.0.name",defaultFilter: "Division 2" },
-    { title: "Time Zone", field: "timeZone" },
-    { title: "Primary Group", field: "primaryGroup.name"},
+    { title: "Time Zone", field: "1.results.timeZone" },
     { title: "Reputation Points", field: "reputationPoints" },
     { title: "Posts", field: "posts" },
     { title: "Last Visit", field: "lastVisit" },
     { title: "Rank", field: "rank" },
     { title: "Achievement Points", field: "achievements_points" },
-  ]
-  useEffect(() => {
-    fetch('/api/core/members?key=d89ae9a6e3ace7714983ed652997357b')
-      .then(resp => resp.json())
-      .then(resp => {
-        console.log(resp);
-        setData(resp)
-      })
-  }, [])
-
+    { title: "Events Hosted", field: "konacni" },
+  ];
+  
+console.log("Division2", props);
   return (
     <div className="App">
       <MaterialTable
         title="Division 2"
-        data={data.results}
+        data={props.data}
         columns={columns}
         options={{
           toolbar:false ,
@@ -40,10 +32,9 @@ function Division2() {
         },
           paging:false,
           search: false,
-          pageSize:50,      
-          emptyRowsWhenPaging: false,  
+          pageSize:50,       // make initial page size
+          emptyRowsWhenPaging: false,   // To avoid of having empty rows
         }}
-      
         style={{ backgroundColor: '#282c34',
         color: 'white'
       }}

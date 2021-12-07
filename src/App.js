@@ -11,7 +11,10 @@ import {
   Link
 } from "react-router-dom";
 
-export default function App() {
+let count = 0;
+
+export default function App(props) {
+  count = props;
   return (
     <HashRouter>
       <div className="App">
@@ -33,9 +36,10 @@ export default function App() {
 }
 
 function division1() {
+  console.log("Division1 props",count);
   return (
     <div className="App">
-      <Division1></Division1>
+      <Division1 data={count.data}/>
     </div>
   );
 }
@@ -44,7 +48,7 @@ function division1() {
 function division2() {
   return (
     <div className="App">
-      <Division2></Division2>
+      <Division2 data={count.data}/>
     </div>
   );
 }

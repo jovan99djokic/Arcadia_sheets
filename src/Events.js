@@ -1,5 +1,5 @@
 import React, {useState, useEffect } from 'react';
-import Division1 from './Division1.js'
+import App from './App.js';
 
   const Event = () => {
     const [datas, setDatas] = useState([])
@@ -39,10 +39,10 @@ import Division1 from './Division1.js'
       konacni.push(k);
     }
     // console.log("konacni", konacni);
-    let dodat = datas.map(obj=> ({...obj, konacni: konacni[obj.id]}))
-    // console.log("Dodat", dodat);
+    let test = datas.map(obj=> ({...obj, konacni: konacni[obj.id]}))
+     console.log("Events", test);
 return(
-  <Division1 data={dodat}/>
+  <App data={test}/>
 );
 } 
 export default Event;
