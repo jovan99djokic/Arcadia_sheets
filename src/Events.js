@@ -4,25 +4,31 @@ import App from './App.js';
   const Event = () => {
     const [datas, setDatas] = useState([])
     const [dataq, setDataq] = useState([])
+    const [totalpagescalendar, setTotalpagescalendar] = useState([])
+    const [totalpagesmembers, setTotalpagesmembers] = useState([])
     var konacni = [];
 
     useEffect(() => {
-    fetch('https://cors-anywhere.herokuapp.com/https://www.blacksabre.org/api/calendar/events?key=d89ae9a6e3ace7714983ed652997357b')
+    //fetch('https://murmuring-sierra-05569.herokuapp.com/https://www.blacksabre.org/api/calendar/events?key=d89ae9a6e3ace7714983ed652997357b')
+    fetch('https://www.blacksabre.org/api/calendar/events?key=d89ae9a6e3ace7714983ed652997357b')
       .then(resp => resp.json())
       .then(resp => {
-        setDataq(resp.results)
+        setTotalpagescalendar(resp.totalPages)
       })
     }, [])   
 
       useEffect(() => {
-        fetch('https://cors-anywhere.herokuapp.com/https://www.blacksabre.org/api/core/members?key=d89ae9a6e3ace7714983ed652997357b')
+       // fetch('https://murmuring-sierra-05569.herokuapp.com/https://www.blacksabre.org/api/core/members?key=d89ae9a6e3ace7714983ed652997357b')
+       fetch('https://www.blacksabre.org/api/core/members?key=d89ae9a6e3ace7714983ed652997357b')
           .then(resp => resp.json())
           .then(resp => {
-            setDatas(resp.results)   
+            setTotalpagesmembers(resp.totalPages)   
           })
       }, [])     
 
-      // let result = datas.map(a => a.id);
+
+
+      console.log(datas);
 
       let resulq = dataq.map(b => b.author.id);
       let max_vrednost = resulq.slice(-1)[0] 
@@ -38,10 +44,10 @@ import App from './App.js';
       }
       konacni.push(k);
     }
-    // console.log("konacni", konacni);
+
     let test = datas.map(obj=> ({...obj, konacni: konacni[obj.id]}))
-     console.log("Events", test);
-return(
+
+    return(
   <App data={test}/>
 );
 } 

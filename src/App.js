@@ -36,7 +36,6 @@ export default function App(props) {
 }
 
 function division1() {
-  console.log("Division1 props",count);
   return (
     <div className="App">
       <Division1 data={count.data}/>
